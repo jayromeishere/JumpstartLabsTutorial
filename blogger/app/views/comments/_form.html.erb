@@ -1,0 +1,16 @@
+<h3>Post a comment</h3>
+<p>
+<%= form_for [ @article, @comment ] do |f| %>
+  <p>
+    <%= f.label :author_name, "Your Name" %><br/>
+    <%= f.text_field :author_name %>
+  </p>
+  <p>
+    <%= f.label :body, "Your Comment" %><br/> <!-- add second parameter to replace default column label (name given in model) with custom text -->
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit 'Submit' %>
+  </p>
+<% end %>
+</p>
