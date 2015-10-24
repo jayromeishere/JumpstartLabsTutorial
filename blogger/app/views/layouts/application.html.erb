@@ -8,7 +8,8 @@
 </head>
 <body>
 
-<%= yield %>
-
+<p class="flash"><%= flash.notice %></p>    
+<%= yield %> 
+<!-- where the view data will be injected --> 
 </body>
 </html>
