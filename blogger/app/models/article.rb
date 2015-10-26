@@ -2,6 +2,8 @@ class Article < ActiveRecord::Base
     has_many :comments
     has_many :taggings
     has_many :tags, through: :taggings
+    has_attached_file :image #This has_attached_file method is part of the paperclip library. With that declaration, paperclip will understand that this model should accept a file attachment and that there are fields to store information about that file which start with image_ in this model’s database table.
+    validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"] #validation of filetype is REQUIRED
     
     def tag_list
         self.tags.collect do |tag|

@@ -7,6 +7,13 @@ Tags:
     <% end %>
 </p>
 
+<p> 
+    <% if @article.image.exists? %>
+        <%= image_tag @article.image.url %><br />
+    <% end %>
+</p> 
+<!-- image_tag is a method that displays an image, taking the image's URI as a parameter -->
+
 <p><%= @article.body %></p>
 
 <h3>Comments (<%= @article.comments.size %>) </h3>
